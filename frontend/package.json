@@ -14,7 +14,9 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-lottie": "^1.2.4",
-    "react-router-dom": "^6.27.0"
+    "react-router-dom": "^6.27.0",
+    "three": "^0.170.0",
+    "vanta": "^0.5.24"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
