@@ -2,33 +2,7 @@
 An app to automate conversion of social media posts into amazon listed products.
 
 ## How to Run the App
-1. To run the app, open the terminal inside the folder AmazonLists and use the following commands:
-
-```powershell
-npm install
-```
-```powershell
-npm run dev
-```
-
-2. Open another powershell terminal and run the following commands: 
-```powershell
-cd frontend
-```
-```powershell
-npm install
-```
-```powershell
-npm run dev
-```
-3. Finally open another terminal and run the following commands: 
-
-```powershell
-cd backend
-```
-```powershell
-python api.py
-```
+1. Double click on startapp in windows only.
 
 ### Your .env in the AmazonLists folder will have the following keys: 
 VITE_GEMINI_API_KEY=

@@ -1,19 +1,285 @@
-@keyframes gradientAnimation {
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+/* Top bar */
+.top-bar {
+    width: 100%;
+    height: 60px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    height: 40px;
+    /* Adjust the height as needed */
+    width: auto;
+    /* Maintain aspect ratio */
+    margin-left: 25px;
+    /* Space between the logo and the title */
+}
+
+/* Brand Title Styles */
+.brand-title {
+    font-family: "Cookie", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #ff8cb6;
+    position: absolute;
+    left: 92px;
+    cursor: default;
+}
+
+.brand-title:hover {
+    color: #ffb400;
+    transition: color 0.3s ease-in-out;
+}
+
+.heading {
+    position: absolute;
+    top: 18px;
+    /* Adjustable vertical position */
+    left: 20px;
+    /* Adjustable left margin */
+    font-family: 'Times New Roman', serif;
+    /* Font style */
+    font-size: 20px;
+    /* Adjustable font size */
+    color: white;
+    /* Default text color */
+    z-index: 1;
+}
+
+.box1:hover .heading,
+.box4:hover .heading,
+.box5:hover .heading {
+    color: #ff6161;
+    transform: scale(1.05);
+}
+
+.box2:hover .heading,
+.box3:hover .heading,
+.box6:hover .heading {
+    color: #fa598f;
+    transform: scale(1.05);
+}
+
+/* Base layout */
+.landing-page {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Content section (allows full scrolling) */
+.content {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Additional styling for the white section */
+.white-section {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Grid container with flexbox */
+.grid-container {
+    display: flex;
+    justify-content: space-between;
+    /* Space between columns */
+    width: 100%;
+    height: 100%;
+    padding-top: 25px;
+}
+
+/* Column styling */
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 29px;
+    width: 32%;
+}
+
+.black-section {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    height: 95vh;
+
+}
+
+@keyframes borderMoveBeigeRed {
     0% {
-        background-position: 0% 50%;
+        border-image: linear-gradient(0deg, #f7e1c1, #fbc581, #ff6161, #e63946) 1;
     }
 
     50% {
-        background-position: 100% 50%;
+        border-image: linear-gradient(180deg, #f7e1c1, #fbc581, #ff6161, #e63946) 1;
     }
 
     100% {
-        background-position: 0% 50%;
+        border-image: linear-gradient(360deg, #f7e1c1, #fbc581, #ff6161, #e63946) 1;
     }
 }
 
-.gradient-background {
-    background: linear-gradient(270deg, #d2007e, #8d3cff, #5ffaff, #00ef9f);
-    background-size: 400% 400%;
-    animation: gradientAnimation 8s ease infinite;
+/* Cherry Blossom Pink Theme Animation */
+@keyframes borderMoveCherryBlossom {
+    0% {
+        border-image: linear-gradient(45deg, #f9a8b7, #f97d7d, #f85d8e, #f44336) 1;
+    }
+
+    25% {
+        border-image: linear-gradient(135deg, #f85d8e, #f97d7d, #f9a8b7, #f44336) 1;
+    }
+
+    50% {
+        border-image: linear-gradient(225deg, #f44336, #f9a8b7, #f97d7d, #f85d8e) 1;
+    }
+
+    75% {
+        border-image: linear-gradient(315deg, #f97d7d, #f85d8e, #f44336, #f9a8b7) 1;
+    }
+
+    100% {
+        border-image: linear-gradient(405deg, #f9a8b7, #f97d7d, #f85d8e, #f44336) 1;
+    }
+}
+
+/* Common Styles for All Boxes */
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6 {
+    position: relative;
+    border: 1px solid;
+    border-image-slice: 1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    height: calc(50% - 12px);
+    transition: transform 0.3s ease;
+    overflow: visible;
+}
+
+.box1,
+.box4,
+.box5 {
+    animation-name: borderMoveBeigeRed;
+    background: linear-gradient(to bottom, rgba(247, 225, 193, 0.2), black, rgba(249, 179, 93, 0.345));
+    box-shadow: 0px 0px 10px 4px rgba(252, 133, 133, 0.993);
+    /* Vibrant red glow */
+}
+
+/* Cherry Blossom Pink Theme */
+.box2,
+.box3,
+.box6 {
+    animation-name: borderMoveCherryBlossom;
+    background: linear-gradient(to bottom, rgba(248, 114, 138, 0.397), black, rgba(248, 93, 142, 0.2));
+    box-shadow: 0px 0px 15px 5px rgba(248, 93, 142, 0.995);
+    /* Stronger Glow Shadow */
+}
+
+/* Hover Effect (Grow Size) */
+.box1:hover,
+.box2:hover,
+.box3:hover,
+.box4:hover,
+.box5:hover,
+.box6:hover {
+    transform: scale(1.05);
+    /* Grow in size */
+}
+
+/* Arrow Inside (Top-Right, Pointing to Right) */
+.box2::after,
+.box3::after,
+.box6::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #fa598f;
+    /* Bright Red Arrow color */
+    transform: scale(0);
+    /* Initially hidden */
+    transition: transform 0.3s ease;
+}
+
+.box1::after,
+.box4::after,
+.box5::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #ff6161;
+    /* Vibrant red arrow color */
+    transform: scale(0);
+    /* Initially hidden */
+    transition: transform 0.3s ease;
+}
+
+/* Arrow Appears on Hover */
+.box1:hover::after,
+.box2:hover::after,
+.box3:hover::after,
+.box4:hover::after,
+.box5:hover::after,
+.box6:hover::after {
+    transform: scale(1);
+    /* Arrow becomes visible */
+}
+
+/* Box Heights */
+.box1 {
+    height: calc(70% - 12px);
+}
+
+.box2 {
+    height: calc(30% - 12px);
+}
+
+.box3 {
+    height: calc(50% - 12px);
+}
+
+.box4 {
+    height: calc(50% - 12px);
+}
+
+.box5 {
+    height: calc(60% - 12px);
+}
+
+.box6 {
+    height: calc(40% - 12px);
 }
