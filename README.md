@@ -1,7 +1,8 @@
 # Template
 1. A vite_react frontend (additional landing page)
-2. A flask integrated python backend.
-3. A express server
+2. A flask integrated python backend
+3. A template for CrewAI agents
+4. An express server
 
 ## How to Run the App
 1. Double click on startapp in windows only.
